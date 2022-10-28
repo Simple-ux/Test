@@ -1,3 +1,5 @@
+# uvicorn main:app
+
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.responses import FileResponse, RedirectResponse
@@ -21,6 +23,8 @@ async def redirect(link:str):
     for j in url_arr: 
         if url_arr[j].split('/')[-1] == link:
             return RedirectResponse(j)
+        else:
+            return RedirectResponse('/')
 
 # Генерация страницы
 @app.post("/", response_class=HTMLResponse)
