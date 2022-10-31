@@ -10,6 +10,7 @@ import json
 app = FastAPI()
 templates = Jinja2Templates(directory="public")
 
+# View
 @app.get('/')
 async def main_view():
     return FileResponse("public/index.html")
@@ -25,7 +26,7 @@ async def redirect(link:str):
         else:
             return RedirectResponse('/')
 
-# Генерация страницы
+
 @app.post("/", response_class=HTMLResponse)
 async def get_url(request: Request, url: str = Form()):
     return templates.TemplateResponse("res.html", {"request": request, "url": generate_url(url)})
