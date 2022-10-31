@@ -1,8 +1,7 @@
 # uvicorn main:app
 
 from fastapi import FastAPI, Request, Form
-from fastapi.responses import HTMLResponse
-from fastapi.responses import FileResponse, RedirectResponse
+from fastapi.responses import FileResponse, RedirectResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 import random
 import json
