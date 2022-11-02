@@ -19,7 +19,7 @@ where
 -- 2.2 --
 select
     array_agg(rep.barcode),
-    array_agg(rep.barcode)
+    array_agg(rep.price)
 FROM
     reports rep
     left join pos on rep.pos_id = pos.id
