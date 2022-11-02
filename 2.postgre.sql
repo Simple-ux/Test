@@ -25,3 +25,10 @@ FROM
     left join pos on rep.pos_id = pos.id
 group by
     pos.title
+
+
+-- без джоинов
+
+-- select array_agg(rep.barcode), array_agg(rep.price)
+-- FROM reports rep
+-- group by rep.pos_id
