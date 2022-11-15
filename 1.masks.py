@@ -15,7 +15,7 @@ class MailMask:
 
         return self.mail.replace(string, self.mask_symbol * len(string))
 
-obj_1 = MailMask('mood_123@mail.ru', 'x')
+obj_1 = MailMask('mood123@mail.ru', 'x')
 print(obj_1.mask())
 
 
