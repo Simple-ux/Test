@@ -10,4 +10,12 @@
             cls._instances[cls] = super(SingletonMeta, cls).__call__(*args, **kwargs)
         return cls._instances[cls]
        
- 3. count_bits = lambda n: bin(n).count('1')
+3. count_bits = lambda n: bin(n).count('1')
+
+4. def digital_root(n):
+    if n < 10:
+        return n
+    else:
+        return digital_root(sum(map(int,str(n))))
+       
+5. even_or_odd = lambda number: "Even" if number % 2 == 0 else "Odd"
