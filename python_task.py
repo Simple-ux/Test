@@ -1,7 +1,7 @@
 sorted_list = [1, 6, 8, 12, 13]
 
-
 # O(n)
+#num - целевое число
 def twoSum(sorted_list, num):
 
     for i in range(len(sorted_list)):
