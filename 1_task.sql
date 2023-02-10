@@ -13,5 +13,4 @@ from table_1 t
         t2.primary_key like CONCAT('%', t.марка  ,'%')
     join table_3 t3
         on t3.дата = t.дата
-group by дилер,t.марка,t.тип,t.стоимость,t2.comission,t3.значение,t.дата
 order by дата
