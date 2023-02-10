@@ -5,7 +5,7 @@ select distinct
     t.тип,
     sum(стоимость) over (partition by t.дата, t.тип) as итоговые_сборы,
     round(sum(стоимость) over (partition by t.дата, t.тип) - sum(стоимость * t2.comission) over (partition by t.дата, t.тип)) as после_вычета,
-    max(дилер) over(partition by t.дата order by count(дилер) desc),
+    max(дилер) over(partition by t.дата order by count(дилер) desc)  as дилер_max_sales,
     round((sum(стоимость) over (partition by t.дата, t.тип) - sum(стоимость * t2.comission) over (partition by t.дата, t.тип)) / t3.значение) as в_валюте,
     t.дата 
 from table_1 t 
